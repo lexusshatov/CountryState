@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.mouse.country_state.db.Country
 import com.mouse.country_state.db.CountryStateDao
 import com.mouse.country_state.db.CountryStateDatabase
+import com.mouse.country_state.db.State
 
 object CountryState : CountryStateDao {
 
@@ -27,5 +28,9 @@ object CountryState : CountryStateDao {
 
     override fun findCountry(query: String): Country? {
         return dao.findCountry(query)
+    }
+
+    override fun findState(query: String): State? {
+        return if (query.isNotEmpty()) dao.findState(query) else null
     }
 }
