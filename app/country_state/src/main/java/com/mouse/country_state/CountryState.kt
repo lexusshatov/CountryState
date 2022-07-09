@@ -14,6 +14,7 @@ object CountryState : CountryStateDao {
         get() = database.countryStateDao()
 
     fun init(appContext: Context) {
+        appContext.deleteDatabase(DATABASE_NAME)
         database = Room.databaseBuilder(
             appContext,
             CountryStateDatabase::class.java,
