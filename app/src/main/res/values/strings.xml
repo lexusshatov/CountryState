@@ -2,4 +2,5 @@
     <string name="app_name">CountryState</string>
     <string name="find">FIND</string>
     <string name="info">info</string>
+    <string name="find_country">Find country</string>
 </resources>

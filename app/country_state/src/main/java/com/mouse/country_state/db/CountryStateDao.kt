@@ -6,6 +6,6 @@ import androidx.room.Query
 @Dao
 interface CountryStateDao {
 
-    @Query("SELECT * FROM Country")
-    suspend fun getAllCountries(): List<Country>
+    @Query("SELECT * FROM Country WHERE Name=:query")
+    fun findCountry(query: String): Country?
 }

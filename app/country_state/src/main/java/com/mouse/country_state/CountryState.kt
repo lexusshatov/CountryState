@@ -20,11 +20,11 @@ object CountryState : CountryStateDao {
             DATABASE_NAME
         )
             .createFromAsset(DATABASE_NAME)
-            .fallbackToDestructiveMigration()
+            .allowMainThreadQueries()
             .build()
     }
 
-    override suspend fun getAllCountries(): List<Country> {
-        return dao.getAllCountries()
+    override fun findCountry(query: String): Country? {
+        return dao.findCountry(query)
     }
 }
