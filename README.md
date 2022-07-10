@@ -1,2 +1,21 @@
-# Getting Started
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
+# Countries, States & Polygons
+## General info
+This is an offline library that provides information about countries, states and points in the form of polygons in which the states are located.
+For a country, you can get its abbreviation and phone code.
+For a state, you can get its abbreviation and polygon points.
+## How to use it
+### Step 1. In your application class add the following lines:
+override fun onCreate() {
+        super.onCreate()
+        Coustapol.init(applicationContext)
+    }
+### Step 2. You can use it like this
+val country = Coustapol.findCountry("United States")
+## Setup
+### Step 1. Add the jitpack repository to your build file
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
