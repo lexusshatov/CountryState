@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.mouse.countrystate"
+        applicationId "com.mouse.coustapol"
         minSdk 24
         targetSdk 31
         versionCode 1
@@ -40,7 +40,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
-    implementation project(path: ':app:country_state')
+    implementation project(path: ':app:coustapol')
     implementation "com.google.android.gms:play-services-maps:18.0.2"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
