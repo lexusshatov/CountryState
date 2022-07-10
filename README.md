@@ -5,17 +5,23 @@ For a country, you can get its abbreviation and phone code.
 For a state, you can get its abbreviation and polygon points.
 ## How to use it
 ### Step 1. In your application class add the following lines:
+```
 override fun onCreate() {
         super.onCreate()
         Coustapol.init(applicationContext)
     }
+```
 ### Step 2. You can use it like this
+```
 val country = Coustapol.findCountry("United States")
+```
 ## Setup
 ### Step 1. Add the jitpack repository to your build file
+```
 allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
+```
