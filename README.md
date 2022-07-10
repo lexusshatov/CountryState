@@ -13,7 +13,7 @@ override fun onCreate() {
 ```
 ### Step 2. You can use it like this
 ```
-val country = Coustapol.findCountry("United States")
+val country = Coustapol.findCountry("Ukraine")
 ```
 ## Setup
 ### Step 1. Add the jitpack repository to your build file
@@ -23,5 +23,12 @@ allprojects {
 			...
 			maven { url 'https://jitpack.io' }
 		}
+	}
+```
+### Step 2. Add the dependency to your project
+```
+dependencies {
+		def version = "0.1"
+	        implementation 'com.github.lexusshatov:Coustapol:$version'
 	}
 ```
