@@ -14,4 +14,7 @@ interface CoustapolDao {
 
     @Query("SELECT * FROM State WHERE Name=:query OR Abbreviate=:query")
     fun findState(query: String): State?
+
+    @Query("SELECT * FROM Country")
+    fun getCountries(): List<Country>
 }

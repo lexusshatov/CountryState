@@ -38,4 +38,8 @@ object Coustapol : CoustapolDao {
         val countryData: Country = findCountry(country) ?: return emptyList()
         return dao.findCountryStates(countryData.abbreviate)
     }
+
+    override fun getCountries(): List<Country> {
+        return dao.getCountries()
+    }
 }
