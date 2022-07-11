@@ -25,6 +25,8 @@ class DemoActivity : AppCompatActivity() {
             binding.info.text = state.toString()
             println(state.points)
         }
+
+        println(Coustapol.findCountryStates("Ukraine"))
     }
 }
 

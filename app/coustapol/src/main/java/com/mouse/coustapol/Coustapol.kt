@@ -33,4 +33,9 @@ object Coustapol : CoustapolDao {
     override fun findState(query: String): State? {
         return if (query.isNotEmpty()) dao.findState(query) else null
     }
+
+    override fun findCountryStates(country: String): List<State> {
+        val countryData: Country = findCountry(country) ?: return emptyList()
+        return dao.findCountryStates(countryData.abbreviate)
+    }
 }
