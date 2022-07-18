@@ -4,4 +4,6 @@
     <string name="info">info</string>
     <string name="find_country">Find country</string>
     <string name="find_state">Find state</string>
+    <string name="country">Country</string>
+    <string name="state">State</string>
 </resources>

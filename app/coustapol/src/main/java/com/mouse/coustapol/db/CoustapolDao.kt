@@ -12,7 +12,7 @@ interface CoustapolDao {
     @Query("SELECT * FROM State WHERE State.Country=:country")
     fun findCountryStates(country: String): List<State>
 
-    @Query("SELECT * FROM State WHERE State.Country=:country AND (Name=:query OR Abbreviate=:query)")
+    @Query("SELECT * FROM State WHERE State.Country=(SELECT Abbreviate FROM Country WHERE Name=:country OR Abbreviate=:country) AND (Name=:query OR Abbreviate=:query)")
     fun findState(country: String, query: String): State?
 
     @Query("SELECT * FROM Country")

@@ -20,8 +20,9 @@ class DemoActivity : AppCompatActivity() {
             binding.info.text = country.toString()
         }
         binding.findState.setOnClickListener {
+            val country = binding.country.string
             val query = binding.editState.string
-            val state = Coustapol.findState(query) ?: return@setOnClickListener
+            val state = Coustapol.findState(country, query) ?: return@setOnClickListener
             binding.info.text = state.toString()
             println(state.points)
         }
