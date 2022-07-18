@@ -30,8 +30,8 @@ object Coustapol : CoustapolDao {
         return dao.findCountry(query)
     }
 
-    override fun findState(query: String): State? {
-        return if (query.isNotEmpty()) dao.findState(query) else null
+    override fun findState(country: String, query: String): State? {
+        return if (query.isNotEmpty()) dao.findState(country, query) else null
     }
 
     override fun findCountryStates(country: String): List<State> {
