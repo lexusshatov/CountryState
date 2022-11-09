@@ -29,6 +29,6 @@ val State.alternateNames: List<String>
     get() {
         val namesArray = JSONArray(alternateNamesJson)
         return (0 until namesArray.length()).map {
-            namesArray.getString(it)
+            namesArray.get(it).toString()
         }
     }
