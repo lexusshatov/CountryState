@@ -10,6 +10,7 @@ import com.mouse.coustapol.db.State
 object Coustapol : CoustapolDao {
 
     private const val DATABASE_NAME = "CountryStates.db"
+
     private lateinit var database: CoustapolDatabase
     private val dao: CoustapolDao
         get() = database.coustapolDao()

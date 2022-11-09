@@ -11,6 +11,7 @@ data class State(
     @ColumnInfo(name = "Name") val name: String,
     @ColumnInfo(name = "Abbreviate") val abbreviate: String,
     @ColumnInfo(name = "Points") val pointsJson: String,
+    @ColumnInfo(name = "AlternateNames") val alternateNamesJson: String,
 )
 
 val State.points: List<LatLng>
@@ -21,5 +22,13 @@ val State.points: List<LatLng>
             val latitude = latLngObject.getDouble("lat")
             val longitude = latLngObject.getDouble("lng")
             LatLng(latitude, longitude)
+        }
+    }
+
+val State.alternateNames: List<String>
+    get() {
+        val namesArray = JSONArray(alternateNamesJson)
+        return (0 until namesArray.length()).map {
+            namesArray.getString(it)
         }
     }
