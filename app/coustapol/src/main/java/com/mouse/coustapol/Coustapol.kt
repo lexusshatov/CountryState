@@ -24,6 +24,7 @@ object Coustapol : CoustapolDao {
         )
             .createFromAsset(DATABASE_NAME)
             .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
             .build()
     }
 
