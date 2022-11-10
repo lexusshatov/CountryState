@@ -5,6 +5,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.mouse.coustapol.Coustapol
 import com.mouse.coustapol.databinding.ActivityDemoBinding
+import com.mouse.coustapol.db.entity.alternateNames
 import com.mouse.coustapol.db.entity.points
 
 class DemoActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class DemoActivity : AppCompatActivity() {
             val state = Coustapol.findState(country, query) ?: return@setOnClickListener
             binding.info.text = state.toString()
             println(state.points)
+            println(state.alternateNames)
         }
 
         println(Coustapol.findCountryStates("Ukraine"))

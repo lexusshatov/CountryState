@@ -23,4 +23,7 @@ interface CoustapolDao {
 
     @Query("SELECT * FROM State WHERE UPPER(State.Country)=UPPER(:country)")
     fun findCountryStates(country: String): List<State>
+
+    @Query("SELECT Name FROM AlternateNames WHERE StateID=:stateId")
+    fun findStateAlternateNames(stateId: Int): List<String>
 }

@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.android.gms.maps.model.LatLng
+import com.mouse.coustapol.Coustapol
 import org.json.JSONArray
 
 @Entity
@@ -26,3 +27,6 @@ val State.points: List<LatLng>
             LatLng(latitude, longitude)
         }
     }
+
+val State.alternateNames: List<String>
+    get() = Coustapol.findStateAlternateNames(id)

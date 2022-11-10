@@ -44,4 +44,8 @@ object Coustapol : CoustapolDao {
     override fun getCountries(): List<Country> {
         return dao.getCountries()
     }
+
+    override fun findStateAlternateNames(stateId: Int): List<String> {
+        return dao.findStateAlternateNames(stateId)
+    }
 }
