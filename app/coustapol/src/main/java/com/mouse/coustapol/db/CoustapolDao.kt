@@ -2,6 +2,8 @@ package com.mouse.coustapol.db
 
 import androidx.room.Dao
 import androidx.room.Query
+import com.mouse.coustapol.db.entity.Country
+import com.mouse.coustapol.db.entity.State
 
 @Dao
 interface CoustapolDao {
@@ -16,7 +18,7 @@ interface CoustapolDao {
 
     @Query("SELECT * FROM State " +
             "WHERE UPPER(State.Country)=UPPER((SELECT Abbreviate FROM Country WHERE UPPER(Name)=UPPER(:country) OR UPPER(Abbreviate)=UPPER(:country))) " +
-            "AND (UPPER(Name)=UPPER(:query) OR UPPER(Abbreviate)=UPPER(:query) OR INSTR(UPPER(AlternateNames), UPPER(:query)) > 0)")
+            "AND ((UPPER(Name)=UPPER(:query) OR UPPER(Abbreviate)=UPPER(:query) OR ID = (SELECT ID FROM AlternateNames WHERE UPPER(Name)=UPPER(:query))))")
     fun findState(country: String, query: String): State?
 
     @Query("SELECT * FROM State WHERE UPPER(State.Country)=UPPER(:country)")

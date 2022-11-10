@@ -2,10 +2,10 @@ package com.mouse.coustapol
 
 import android.content.Context
 import androidx.room.Room
-import com.mouse.coustapol.db.Country
 import com.mouse.coustapol.db.CoustapolDao
 import com.mouse.coustapol.db.CoustapolDatabase
-import com.mouse.coustapol.db.State
+import com.mouse.coustapol.db.entity.Country
+import com.mouse.coustapol.db.entity.State
 
 object Coustapol : CoustapolDao {
 
