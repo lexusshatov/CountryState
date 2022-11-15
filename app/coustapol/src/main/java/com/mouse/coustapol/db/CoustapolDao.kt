@@ -18,7 +18,9 @@ interface CoustapolDao {
 
     @Query("SELECT * FROM State " +
             "WHERE UPPER(State.Country)=UPPER((SELECT Abbreviate FROM Country WHERE UPPER(Name)=UPPER(:country) OR UPPER(Abbreviate)=UPPER(:country))) " +
-            "AND ((UPPER(Name)=UPPER(:query) OR UPPER(Abbreviate)=UPPER(:query) OR ID = (SELECT ID FROM AlternateNames WHERE UPPER(Name)=UPPER(:query))))")
+            "AND (UPPER(Name)=UPPER(:query) " +
+            "OR UPPER(Abbreviate)=UPPER(:query) " +
+            "OR ID = (SELECT StateID FROM AlternateNames WHERE UPPER(Name)=UPPER(:query)))")
     fun findState(country: String, query: String): State?
 
     @Query("SELECT * FROM State WHERE UPPER(State.Country)=UPPER(:country)")
